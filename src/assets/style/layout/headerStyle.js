@@ -38,7 +38,55 @@ export const HeaderMainMenu = styled.button`
     }
 `
 
-export const HeaderNav = styled.div`   
+export const HeaderAllMenu = styled.div`   
+    display : none;
+    position : fixed;
+    top : 0;
+    right : 0;
+    padding : 20px;
+    width : 50%;
+    height : 100%;
+    background : #323228;
+
+    .remove{
+        display : block;
+        position : relative;
+        margin-left : auto;
+        width : 25px;
+        height : 25px;
+        color : #fff;
+
+        span{
+            display : block;
+            position : absolute;
+            top : 50%;
+            left : 50%; 
+            transform : translate(-50% , -50%) rotate(-45deg);
+            width : 80%;
+            height : 2px;
+            background : #fff;
+            border-radius : 30px;
+
+            &:first-of-type{
+                transform : translate(-50% , -50%) rotate(45deg);
+            }
+        }
+    }
+
+    ul{
+        margin-top : 10px;
+        padding-top : 10px;
+        border-top : 1px solid rgba(255,255,255,.5);
+
+        li{
+            margin-bottom : 10px;
+
+            a{
+                color : #fff;   
+                font-size : 1.1em;              
+            }
+        }
+    }
 `
 export const HeaderNavList = styled.ul`
 `
