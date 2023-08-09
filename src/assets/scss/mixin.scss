@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@mixin overflow-line-3($height , $line){
+    display:-webkit-box;
+    width:100%;
+    height:$height;
+    line-height:$line;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+}

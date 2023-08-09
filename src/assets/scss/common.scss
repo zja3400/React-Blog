@@ -1,0 +1,217 @@
+@charset "UTF-8";
+/*
+ * Common Css Set
+ * Comment :
+ * 공통으로 변경되는 설정
+ * font-family, font-size 등
+ * 설정 변경시 공유 필수
+ */
+ 
+/* Font Style */
+/* noto-sans-kr-300 - korean_latin */
+// @font-face {
+//     font-family: 'Noto Sans KR';
+//     font-style: normal;
+//     font-weight: 300;
+//     src: url('/assets/font/noto-sans-kr-v11-korean_latin-300.eot'); /* IE9 Compat Modes */
+//     src: local('Noto Sans KR Light'), local('NotoSansKR-Light'),
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-300.woff') format('woff'), /* Modern Browsers */
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-300.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+// }
+
+/* noto-sans-kr-regular - korean_latin */
+// @font-face {
+//     font-family: 'Noto Sans KR';
+//     font-style: normal;
+//     font-weight: 400;
+//     src: url('/assets/font/noto-sans-kr-v11-korean_latin-regular.eot'); /* IE9 Compat Modes */
+//     src: local('Noto Sans KR Regular'), local('NotoSansKR-Regular'),
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-regular.woff') format('woff'), /* Modern Browsers */
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-regular.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+// }
+
+/* noto-sans-kr-500 - korean_latin */
+// @font-face {
+//     font-family: 'Noto Sans KR';
+//     font-style: normal;
+//     font-weight: 500;
+//     src: url('/assets/font/noto-sans-kr-v11-korean_latin-500.eot'); /* IE9 Compat Modes */
+//     src: local('Noto Sans KR Medium'), local('NotoSansKR-Medium'),
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-500.woff') format('woff'), /* Modern Browsers */
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-500.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+// }
+
+/* noto-sans-kr-700 - korean_latin */
+// @font-face {
+//     font-family: 'Noto Sans KR';
+//     font-style: normal;
+//     font-weight: 700;
+//     src: url('/assets/font/noto-sans-kr-v11-korean_latin-700.eot'); /* IE9 Compat Modes */
+//     src: local('Noto Sans KR Bold'), local('NotoSansKR-Bold'),
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-700.woff') format('woff'), /* Modern Browsers */
+//         url('/assets/font/noto-sans-kr-v11-korean_latin-700.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+// }
+
+*{
+	box-sizing:border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,
+button,
+input, select, textarea{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+	color: $color-defalut;
+	font-size: 13px;
+	line-height:1.5;
+	letter-spacing:-0.05em;
+	// font-family: $font-defalut;
+}
+span, i, b, em{
+	color:inherit;
+}
+
+img{
+	display: block;
+	width: 100%;
+	border: 0 none; 
+	font-size: 0;
+	line-height: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	background: #f5f4f0;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	position:relative;
+	overflow:hidden;
+    table-layout: fixed;
+    width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+table caption{
+	opacity:0;
+	font-size:0;
+	width:0;
+	height:0;
+	position:absolute;
+	top:-1px;
+	left:-1px;
+	overflow:hidden;
+}
+
+button{
+	display: block;
+	background:none;
+	cursor:pointer;
+	outline: 0;
+}
+
+a{
+    display: block;
+	text-decoration:none;
+}
+
+select{
+	width:100%;
+	border:1px solid $color-defalut;
+	padding:16px 20px;
+
+	border-radius:0;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+}
+
+textarea{
+	width:100%;
+	border:1px solid $color-defalut;
+	padding:16px 20px;
+	min-height:160px;
+    resize:none;
+}
+
+select::-ms-expand{
+	display:none
+}
+
+@media all and (min-width:768px) {
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video,
+	button,
+	input, select, textarea{
+		font-size: 14px;
+	}
+}
+
+@media all and (min-width:1024px) {
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video,
+	button,
+	input, select, textarea{
+		font-size: 16px;
+	}
+}
