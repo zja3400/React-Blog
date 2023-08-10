@@ -12,7 +12,7 @@ export const HeaderArea = styled.div`
 // Header Logo
 export const HeaderLogo = styled.h1`
     display : block;
-    width : 9rem;
+    width : 5rem;
 
     img{
         width : 100%;
@@ -39,14 +39,21 @@ export const HeaderMainMenu = styled.button`
 `
 
 export const HeaderAllMenu = styled.div`   
-    display : none;
+    display : block;
     position : fixed;
     top : 0;
-    right : 0;
+    right : -100%;
     padding : 20px;
     width : 50%;
     height : 100%;
     background : #323228;
+    opacity : 0;
+    transition : all .8s;
+
+    &.on{
+        right : 0;
+        opacity : 1;
+    }
 
     .remove{
         display : block;

@@ -10,9 +10,9 @@ const PostingListCon = () => {
 
   
       useEffect(() => {
-        const repoOwner = 'zja3400';
-        const repoName = 'Blog-Posting';
-        const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/readme`;
+        const postId = 'zja3400';
+        const postCategory = 'Blog-Posting';
+        const apiUrl = `https://api.github.com/repos/${postId}/${postCategory}/readme`;
     
         axios.get(apiUrl)
           .then(response => {
@@ -29,7 +29,7 @@ const PostingListCon = () => {
       const decodeBase64UTF8 = base64 => {
         const binaryString = atob(base64);
         const bytes = new Uint8Array(binaryString.length);
-        
+
         for (let i = 0; i < binaryString.length; i++) {
           bytes[i] = binaryString.charCodeAt(i);
         }
@@ -75,7 +75,31 @@ const PostingListCon = () => {
                             <div className="text"><p className="text-line-3">포스팅 테스트 미리보기 내용입니다. 3줄까지만</p></div>
                         </div>
                     </Link>
-                </li>                
+                </li>  
+                <li className="posting-list__ul__li">
+                    <Link to="/posting/postingView" className="posting-list__ul__li--btn">
+                        <div className="img"><img src={testImg} alt="" /></div>
+                        <div className="info">
+                            <div className="category">
+                                <p>Javascript</p>
+                            </div>
+                            <div className="title"><p>포스팅 테스트 제목입니다.포스팅 테스트 제목입니다.포스팅 테스트 제목입니다.</p></div>
+                            <div className="text"><p className="text-line-3">포스팅 테스트 미리보기 내용입니다. 3줄까지만</p></div>
+                        </div>
+                    </Link>
+                </li>  
+                <li className="posting-list__ul__li">
+                    <Link to="/posting/postingView" className="posting-list__ul__li--btn">
+                        <div className="img"><img src={testImg} alt="" /></div>
+                        <div className="info">
+                            <div className="category">
+                                <p>Javascript</p>
+                            </div>
+                            <div className="title"><p>포스팅 테스트 제목입니다.포스팅 테스트 제목입니다.포스팅 테스트 제목입니다.</p></div>
+                            <div className="text"><p className="text-line-3">포스팅 테스트 미리보기 내용입니다. 3줄까지만</p></div>
+                        </div>
+                    </Link>
+                </li>                                                
             </ul>
         </ListArea>
     );

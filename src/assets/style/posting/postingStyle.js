@@ -37,16 +37,18 @@ export const ListArea = styled.div`
                         margin-top : 10px;
 
                         p{
-                            font-size : 18px;
+                            font-size : 1.4em;
                             font-weight : 700;
-                            line-height : 24px;
+                            line-height : 1.5em;
                         }
                     }
                     .text{
                         margin-top : 10px;
 
                         p{
-
+                            font-size : 1.2em;
+                            line-height : 1.4em;
+                            height : 4.1em;
                         }
                     }
                 }
@@ -56,7 +58,7 @@ export const ListArea = styled.div`
     
     @media (min-width: ${commonStyle.mobileSize}) {
         .posting-list__ul{
-            ${commonStyle.flexStartCenter};
+            ${commonStyle.flexStartTop};
             flex-wrap : wrap;
 
             &__li{
@@ -69,13 +71,14 @@ export const ListArea = styled.div`
                 &:nth-of-type(2n){
                     margin-right : 0;
                 }
+      
             }
         }    
     }
     
     @media (min-width: ${commonStyle.middleSize}) {
         .posting-list__ul{
-            ${commonStyle.flexStartCenter};
+            ${commonStyle.flexStartTop};
             flex-wrap : wrap;
 
             &__li{
@@ -90,10 +93,34 @@ export const ListArea = styled.div`
                 }
                 &:nth-of-type(3n){
                     margin-right : 0;
-                }
+                }         
             }
         }    
     }
+    @media (min-width: ${commonStyle.pcSize}) {
+        .posting-list__ul{
+            ${commonStyle.flexStartTop};
+            flex-wrap : wrap;
+
+            &__li{
+                margin-right : 20px;
+                width : calc((100% / 4) - 15px);
+
+                &:nth-of-type(-n+4){
+                    margin-top : 0;
+                }
+                &:nth-of-type(2n){
+                    margin-right : 20px;
+                }
+                &:nth-of-type(3n){
+                    margin-right : 20px;
+                }
+                &:nth-of-type(4n){
+                    margin-right : 0;
+                }
+            }
+        }    
+    }    
 `
 
 // Posting View
