@@ -22,7 +22,7 @@ root.render(
         <BrowserRouter>
             <Header />
             <MainContainer className="App-container">
-                <AppRoutes />
+                <AppRoutes />                
             </MainContainer>
             <Footer />
         </BrowserRouter>

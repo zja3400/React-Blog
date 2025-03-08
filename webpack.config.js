@@ -10,14 +10,13 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.join(__dirname, "./build/"),
-        // publicPath: '/',
         filename: "index.bundle.js",
-		clean: {
-			keep: filename => {
-				// console.log("debug", filename);
-				return filename === 'main.php'
-			}
-		}
+        clean: {
+            keep: filename => {
+                return filename === 'main.php'
+            }
+        },
+        publicPath: '/',  // '/'로 설정하여 절대 경로로 사용
     },
 
     devServer: {
@@ -59,5 +58,10 @@ module.exports = {
 			},
         ],
     },
-    plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./public/index.html",
+            // 필요한 경우 여기에 publicPath 등을 명시할 수 있습니다.
+        }),
+    ],
 };

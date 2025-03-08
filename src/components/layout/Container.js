@@ -1,7 +1,7 @@
 import React from 'react';
 import { MainContainer } from '../../assets/style/layout/mainStyle'
 
-import AppRoutes from '../../routes'
+import AppRoutes from './../../routes'
 
 const Container = () => {
     return (
