@@ -1,42 +1,48 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 
-export const PostingApi = () => {
-    const [readmeContent, setReadmeContent] = useState('');
-
+export const PostingApi = ({ onDataFetched }) => {
     useEffect(() => {
-        const owner = 'zja3400'; // GitHub 사용자명
-        const repo = 'Blog-Posting';    // GitHub 저장소명
-        const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/README.md`;
+        const owner = 'zja3400';
+        const repo = 'Blog-Posting';
+        const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/tab_04.html`;
 
         axios.get(apiUrl)
             .then(response => {
-                // GitHub API에서 반환하는 Base64 인코딩된 content
-                const contentBase64 = response.data.content;
-                const decodedContent = decodeBase64UTF8(contentBase64);
-                setReadmeContent(decodedContent);
+                if (response.data.content) {
+                    const contentBase64 = response.data.content;
+                    const decodedContent = decodeBase64UTF8(contentBase64);
+                    const extractedText = extractTitle(decodedContent);
+                    onDataFetched(extractedText); // 타이틀 내용만 부모 컴포넌트로 전달
+                }
             })
             .catch(error => {
-                console.error('Error fetching README:', error);
+                console.error('Error fetching content:', error);
             });
     }, []);
 
-    // Base64를 UTF-8 문자열로 디코딩
-    const decodeBase64UTF8 = base64 => {
-        const binaryString = atob(base64);
-        const bytes = new Uint8Array(binaryString.length);
-
-        for (let i = 0; i < binaryString.length; i++) {
-            bytes[i] = binaryString.charCodeAt(i);
+    // Base64를 UTF-8로 디코딩
+    const decodeBase64UTF8 = (base64) => {
+        try {
+            return decodeURIComponent(escape(atob(base64)));
+        } catch (error) {
+            console.error("Decoding error:", error);
+            return "";
         }
-
-        return new TextDecoder('utf-8').decode(bytes);
     };
-    return (
-      <div>
-          <h2>README Content</h2>
-          <pre>{readmeContent}</pre>
-      </div>
-  );
-};
 
+    // HTML에서 타이틀 태그 내용 추출
+    const extractTitle = (htmlString) => {
+        try {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlString, "text/html");
+            const titleElement = doc.querySelector("title");
+            return titleElement ? titleElement.textContent : "타이틀 없음";
+        } catch (error) {
+            console.error("HTML Parsing error:", error);
+            return "오류 발생";
+        }
+    };
+
+    return null;
+};

@@ -3,5 +3,5 @@ import styled from 'styled-components';
 
 // Main Container
 export const MainContainer = styled.div`
-    padding : 20px;
+    padding : 1rem;
 `

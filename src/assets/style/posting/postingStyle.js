@@ -4,11 +4,19 @@ import styled from 'styled-components';
 // Posting List
 export const ListArea = styled.div`
     .posting-list__ul{
+        ${commonStyle.flexStartTop}
+        flex-wrap : wrap;
+
         &__li{
-            margin-top : 20px;
+            margin-right : 10px;
+            margin-top : 10px;
+            width : calc(50% - 5px);
             box-shadow : 1px 1px 5px 0px rgba(50, 50, 30, 0.2);
             
-            &:first-of-type{
+            &:nth-of-type(2n){
+                margin-right: 0;
+            }
+            &:nth-of-type(-n+2){
                 margin-top : 0;
             }
 
@@ -36,19 +44,19 @@ export const ListArea = styled.div`
                     .title{
                         margin-top : 10px;
 
-                        p{
-                            font-size : 1.4em;
+                        h2{
+                            font-size : 1.5em;
                             font-weight : 700;
-                            line-height : 1.5em;
+                            line-height : 1.9em;
                         }
                     }
                     .text{
                         margin-top : 10px;
 
                         p{
-                            font-size : 1.2em;
+                            font-size : 1em;
                             line-height : 1.4em;
-                            height : 4.1em;
+                            height : 2.8em;
                         }
                     }
                 }
@@ -62,6 +70,7 @@ export const ListArea = styled.div`
             flex-wrap : wrap;
 
             &__li{
+                margin-top : 20px;
                 margin-right : 20px;
                 width : calc(50% - 10px);
 
