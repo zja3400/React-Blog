@@ -5,7 +5,9 @@ import { ViewArea } from "../../assets/style/posting/postingStyle"
 const PostingViewCon = () => {
     return (
         <ViewArea className="posting-view">
-            포스팅 뷰
+            <div className="posting-view__con">
+                내용
+            </div>
         </ViewArea>
     );
 }
