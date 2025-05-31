@@ -7,8 +7,8 @@ import PostingView from '../src/page/posting/PostingView';
 const AppRoutes = () => {
 	return(
 		<Routes>
-			<Route path="/posting/PostingList" exact element={<PostingList />} />
-			<Route path="/posting/PostingView" element={<PostingView />} />
+			<Route path="/posting/PostingList" element={<PostingList />} />
+            <Route path="/posting/postingView/*" element={<PostingView />} />
 		</Routes>
 	)
 }

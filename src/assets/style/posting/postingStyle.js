@@ -134,5 +134,12 @@ export const ListArea = styled.div`
 
 // Posting View
 export const ViewArea = styled.div`
+    padding : 2rem;
 
+    .wmde-markdown{
+        background-color : transparent;
+    }
+    .wmde-markdown pre{
+        background-color : #e5e4dd;
+    }
 `

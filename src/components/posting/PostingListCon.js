@@ -8,9 +8,8 @@ const PostingListCon = () => {
     const [mdList, setMdList] = useState([]); 
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/posting/all')
-            .then(response => {
-                console.log(response.data);  // 응답 데이터가 어떤 형태로 오는지 확인
+        axios.get('http://localhost:3000/api/posting/all/')
+            .then(response => {                
                 setMdList(response.data);    // 배열 형태로 받아서 set
             })
             .catch(error => {
@@ -23,10 +22,11 @@ const PostingListCon = () => {
             <ul className="posting-list__ul">
                 {mdList.map((filePath, idx) => {
                     const fileName = filePath.split('/').pop().replace('.md', '');
+                    const encodedFilePath = filePath.split('/').map(encodeURIComponent).join('/');
 
                     return (
                     <li key={idx} className="posting-list__ul__li">
-                        <Link to={`/posting/all/${encodeURIComponent(filePath)}`} className="posting-list__ul__li--btn">
+                        <Link to={`/posting/postingView/${encodedFilePath}`} className="posting-list__ul__li--btn">                        
                             <div className="img">
                                 <img src={testImg} alt="" />
                             </div>
