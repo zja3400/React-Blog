@@ -25,7 +25,7 @@ const Header = () => {
 
     return (
         <HeaderArea className="header" id="header">
-            <HeaderLogo className="header-logo"><Link to="/"><img src={headerLogo} alt="logo" /></Link></HeaderLogo>
+            <HeaderLogo className="header-logo"><Link to="/main/Main"><img src={headerLogo} alt="logo" /></Link></HeaderLogo>
             <HeaderMainMenu type="button" className="header-main-menu" onClick={()=>{toggleMenu();toggleActive()}}><span></span><span></span></HeaderMainMenu>  
             <HeaderAllLayer isOpen={layerOpen} close={closeMenu} />
         </HeaderArea>

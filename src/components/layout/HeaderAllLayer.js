@@ -9,12 +9,9 @@ const HeaderAllLayer = (props) => {
         <HeaderAllMenu className={isOpen ? 'header-all-menu on' : 'header-all-menu'}>
             <button type="button" className="remove" onClick={close}><span></span><span></span></button>
             <HeaderNavList>
-                <li><Link to="">HTML</Link></li>
-                <li><Link to="">CSS</Link></li>
-                <li><Link to="">JAVASCRIPT</Link></li>
-                <li><Link to="">REACT</Link></li>
-                <li><Link to="">NODE</Link></li>
-                <li><Link to="">CANVAS</Link></li>
+                <li><Link to="/posting/postingList">Posting</Link></li>
+                <li><Link to="">Portfolio</Link></li>
+                <li><Link to="">Career</Link></li>
             </HeaderNavList>
         </HeaderAllMenu>
     );

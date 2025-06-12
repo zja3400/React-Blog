@@ -44,7 +44,7 @@ export const HeaderAllMenu = styled.div`
     top : 0;
     right : -100%;
     padding : 20px;
-    width : 50%;
+    width : 20vw;
     height : 100%;
     background : #323228;
     opacity : 0;
